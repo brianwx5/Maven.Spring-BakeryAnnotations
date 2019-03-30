@@ -18,6 +18,7 @@ public class BakerController {
         this.service = service;
     }
 
+    @GetMapping("/bakers")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
@@ -28,7 +29,7 @@ public class BakerController {
     }
 
     @PostMapping("/bakers")
-    public ResponseEntity<Baker> create(@RequestBody Baker baker) {
+    public ResponseEntity<Baker> create(@RequestBody  Baker baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
 
